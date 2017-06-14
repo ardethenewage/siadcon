@@ -1,0 +1,43 @@
+    table {
+       border:1px solid white;
+       border-collapse:separate; 
+       border-spacing:5px; 
+       width:530px; 
+       height:auto; 
+       color:black; 
+       text-align:center; 
+       } 
+
+    th, td {
+       border:1px solid black;
+       padding:5px; 
+       } 
+
+    thead, tfoot {
+       background-color:#06DEF8; 
+       color:white; 
+       font-family:"Arial Black", sans-serif;
+       } 
+
+    tr.color {
+       background-color:#E6E6E6; 
+       } 
+    
+    tr.color2 {
+       background-color:red; 
+       }
+    
+    tr.color3 {
+       background-color:yellowgreen; 
+       }
+
+    tr.color4 {
+       background-color:mediumslateblue; 
+       }
+
+    caption {
+       color:black; 
+       font-size:30px; 
+       padding:5px; 
+       font-family:Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif;
+       } 

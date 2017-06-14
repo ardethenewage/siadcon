@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/animate.min.css" rel="stylesheet">
+    <link href="/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/tablas.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+</head><!--/head-->
+<title><%= title%></title>
+<body>
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-4">
+                        <div class="top-number"><p><i class="fa fa-phone-square"></i>  Contacto con el Administrador:  55-39-68-15-70</p></div>
+                    </div>
+                    <div class="col-sm-6 col-xs-8">
+                       <div class="social">
+                            <ul class="social-share">
+                                <li><a href="https://www.facebook.com/ardethenewage"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/JorgePLburneeed"><i class="fa fa-twitter"></i></a></li>
+                            </ul>
+                            <div class="search">
+                           </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/"><img src="/img/SIADCON.png"  WIDTH=100 HEIGHT=70 alt="logo"></a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <% if (isAuthenticated) { %>
+                            <% if (user[0].admin) { %>
+                            <li class="active"><a href="/admin/panel">Panel Administrador</a></li> 
+                            <%}else{%>
+                             <li class="active"><a href="/user/panel">Panel Usuario</a></li> 
+                            <% }%>
+                            <li><a href="/user/logout">Cerrar Sesión</a></li>
+                            <%} else { %>
+                            <li><a href="/user/signup">Registrarse</a></li>
+                            <li><a href="/user/signin">Inicio de sesión</a></li>
+                        <% } %>                                                                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+		

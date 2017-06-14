@@ -1,0 +1,94 @@
+<%- include ../templates/header -%>
+    <center><h1>¡Bienvenido <%= user[0].nombre %>!</h1></center>
+    <br>
+    <center><h3>Departamento: <%= user[0]._id %></h3></center>
+    <div class="container">
+    <br><br><br>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <legend class="text-center header"> <IMG SRC="..\public\img\SIADCON.png" WIDTH=220 HEIGHT=160>Subir su recibo de pago </legend>
+                    <form action="/user/panel" method='post' enctype='multipart/form-data'>
+                        <center><input type="file" name='archivo'></center>
+                        <br> <br>
+                        <center><input type="submit" value='Subir'></center>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+ <% if (user[0].pagos) { %>
+<center>
+<table> 
+  <caption><center>Estado de Cuenta<center></caption>
+  <br>
+    <thead> 
+        <tr> 
+           <th><center>Nombre del Servicio</center></th> 
+           <th><center>$</center></th> 
+         </tr>
+    </thead> 
+    <tbody> 
+        <tr class="color">
+           <td>Limpieza</td> 
+           <td>$<%= user[0].pagos.limpieza %></td> 
+        </tr> 
+        <tr> 
+           <td>Energia Electrica </td> 
+           <td>$<%= user[0].pagos.energia %></td> 
+        </tr> 
+        <tr class="color">
+           <td>Seguridad</td> 
+           <td>$<%= user[0].pagos.seguridad %></td> 
+        </tr> 
+        <tr> 
+           <td>Basura</td> 
+           <td>$<%= user[0].pagos.basura %></td> 
+        </tr> 
+        <tr class="color">
+           <td>Telefono</td> 
+           <td>$<%= user[0].pagos.telefono %></td> 
+        </tr> 
+        <tr>
+           <td>Jardinería y fumigaciones</td> 
+           <td>$<%= user[0].pagos.jardineria %></td> 
+        </tr>
+        <tr class="color">
+           <td>Suministro de gas</td> 
+           <td>$<%= user[0].pagos.gas %></td> 
+        </tr> 
+        <tr>
+           <td>Predial</td> 
+           <td>$<%= user[0].pagos.predial %></td> 
+        </tr>
+        <tr class="color">
+           <td>Honorarios del Admon</td> 
+           <td>$<%= user[0].pagos.honorarios %></td> 
+        </tr> 
+        <tr>
+           <td>Otros Servicios (plomeria, impermeabilizante, albañileria, etc.)</td> 
+           <td>$<%= user[0].pagos.otros %></td> 
+        </tr> 
+          <tr class="color2">
+           <td>Total</td> 
+           <td>$<%= user[0].pagos.total %></td> 
+        </tr> 
+        <tr class="color3">
+           <td>Pago del condomino</td> 
+           <td>$<%= user[0].pagos.abonar %></td> 
+        </tr>
+         <tr class="color4">
+           <td>Saldo Final</td> 
+           <td>$<%= user[0].pagos.saldo %></td> 
+        </tr>
+    </tbody> 
+ </table>
+ </center>
+<%}else{%>
+    <center>
+            <h1>Estado de Cuenta </h1>
+            <br>
+            <h3>Aun no existe registro</h3>
+    </center>
+  <% }%>
+<%- include ../templates/footer -%>Pago del condomino
